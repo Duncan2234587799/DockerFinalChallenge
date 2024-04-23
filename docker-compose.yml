@@ -10,11 +10,11 @@ services:
   depends_on:
    - node-services
 
-  node-services:
+node-services:
   build: .
   ports:
    - "3000:3000"
-   environment:
+  environment:
     - NODE_ENV=development
   depends_on:
    - node-services
@@ -26,7 +26,7 @@ services:
      environment:
       - POSTGRES_USER: myuser
       - POSTGRES_PASSWORD: mypassword
-      - POSTGRES_DB: mydatabase
+      - POSTGRES_DB: mariadb
 
   volumes:
     - ./data:/var/lib/postgresql/data
