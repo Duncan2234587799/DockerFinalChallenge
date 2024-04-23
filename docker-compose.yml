@@ -17,7 +17,7 @@ node-services:
   environment:
     - NODE_ENV=development
   depends_on:
-   - node-services
+   - node-service
     -db
 
 
