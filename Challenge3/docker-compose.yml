@@ -3,14 +3,18 @@ version: '3'
 services:
   nginx:
     build: ./nginx
+    restart: always
     image: nginximage 
     ports:
       - "8888:80"
     depends_on:
       - node_service
+    links:
+      - node_service
 
   node_service:
     build: ./api
+    restart: always
     image: nodeimage
     ports:
       - "3000:3000"
@@ -20,10 +24,13 @@ services:
         MYSQL_DB: "${DB}"
     depends_on:
       - db 
+    links:
+      - db
 
   db:
     image: dbimage
-    build: ./db/mariadb
+    build: ./db/
+    restart: always
     environment:
       MYSQL_USER: "${DB_USER}"
       MYSQL_PASSWORD: "${DB_PASSWORD}"
