@@ -24,8 +24,8 @@ node-services:
   db:
      image: postgres:latest
      environment:
-      - POSTGRES_USER: myuser
-      - POSTGRES_PASSWORD: mypassword
+      - POSTGRES_USER: pauly33
+      - POSTGRES_PASSWORD: DaisyTulip1!
       - POSTGRES_DB: mariadb
 
   volumes:
