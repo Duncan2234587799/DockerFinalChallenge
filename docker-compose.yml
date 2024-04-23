@@ -11,7 +11,8 @@ services:
       - node-service
 
   node-service:
-    build: .
+    build: 
+    context: ./node-service
     ports:
       - "3000:3000"
     environment:
